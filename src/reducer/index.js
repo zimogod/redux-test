@@ -5,6 +5,7 @@ const initialState = {
     cartData:["1","2","3"]
 };
 const listReducer = (state = initialState,action)=>{
+    state = JSON.parse(JSON.stringify(state));//深拷贝
     switch (action.type){
         case ADD:
             state.listData.push(action.payload);
@@ -14,6 +15,7 @@ const listReducer = (state = initialState,action)=>{
     }
 };
 const cartReducer = (state = initialState,action)=>{
+    state = JSON.parse(JSON.stringify(state));//深拷贝
     switch (action.type){
         case ADD1:
             //console.log(state);
@@ -27,7 +29,6 @@ const cartReducer = (state = initialState,action)=>{
             return state;
     }
 };
-
 
 const reducer = combineReducers({
     cartReducer,

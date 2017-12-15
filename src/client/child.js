@@ -43,8 +43,8 @@ class Childs extends Component{
     }
 }
 
-export function mapStateToProps(state) {
-    console.log(state.cartReducer);
+function mapStateToProps(state) {
+    //console.log(state.cartReducer);
     return {
         cartData:state.cartReducer.cartData
     };
