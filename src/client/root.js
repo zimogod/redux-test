@@ -20,31 +20,42 @@ class Root extends Component{
              //console.log(this.props);
         const myStyle = {
             width:'100%',
-            height:'300px',
-            backgroundColor:'#ccc',
             textAlign:'center',
             btn:{
                 width:'160px',
                 height:'40px',
                 display:'block',
-                marginLeft:'700px',
-                backgroundColor:'green'
+                marginLeft:'15%'
+            },
+            ulList:{
+                width:'80%',
+                height:'100px',
+                backgroundColor:'#fff',
+                li:{
+                    marginTop:'20px',
+                    border:'1px solid #ccc',
+                    width:'120px',
+                    height:'49px',
+                    lineHeight:'49px',
+                    listStyle:'none',
+                    float:'left'
+                }
             }
         };
         return (
             <div style={myStyle}>
-                <ul>
+                <ul style={myStyle.ulList}>
                     {
                         cartData.map((item, index) => {
                             return (
-                                <li key={index}>
+                                <li style={myStyle.ulList.li} key={index}>
                                     {item}
                                 </li>
                             )
                         })
                     }
                 </ul>
-                <button style={myStyle.btn} onClick={() =>addCartData()}>点击事件</button>
+                <button style={myStyle.btn} onClick={() =>addCartData()}>添加数字</button>
                 <Child />
             </div>
         )

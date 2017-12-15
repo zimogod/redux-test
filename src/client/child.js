@@ -8,20 +8,24 @@ class Childs extends Component{
         const {cartData,addCartData} = this.props;
         const styles = {
             width:'100%',
-            height:'300px',
-            backgroundColor:'#ccc',
-            ulList:{
-                width:500,
-                height:100,
-                marginLeft:'600px',
-                backgroundColor:'green'
-            },
             btn:{
                 width:'160px',
                 height:'40px',
                 display:'block',
-                marginLeft:'700px',
-                backgroundColor:'green'
+                marginLeft:'15%'
+            },
+            ulList:{
+                width:'80%',
+                height:'100px',
+                li:{
+                    marginTop:'20px',
+                    border:'1px solid #ccc',
+                    width:'120px',
+                    height:'49px',
+                    lineHeight:'49px',
+                    listStyle:'none',
+                    float:'left'
+                }
             }
         };
         return (
@@ -30,14 +34,14 @@ class Childs extends Component{
                     {
                         cartData.map((item, index) => {
                             return (
-                                <li key={index}>
+                                <li style={styles.ulList.li} key={index}>
                                     {item}
                                 </li>
                             )
                         })
                     }
                 </ul>
-                <button style={styles.btn} onClick={() =>addCartData()}>点击事件</button>
+                <button style={styles.btn} onClick={() =>addCartData()}>添加字符串</button>
             </div>
         )
     }
